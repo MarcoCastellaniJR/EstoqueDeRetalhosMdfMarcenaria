@@ -26,9 +26,9 @@ public class GerenciamentoDeSobras extends JFrame {
     private JTable tableAreas;
     private JButton cadastrarAreaButton;
     private JButton porAreaButton;
-    private JPanel AreasPanel;
-    private JPanel ListagemPanel;
-    private JPanel CadastroPanel;
+    private JPanel AreasField;
+    private JPanel listagemField;
+    private JPanel cadastroField;
     private JTextField ChapaArea;
     private JLabel areaCadastroArea;
     private JTable tableAcabamentos;
@@ -55,6 +55,9 @@ public class GerenciamentoDeSobras extends JFrame {
     private JButton listarÁreasButton;
     private JTextPane logPanel;
     private JButton CONSULTARLOGButton;
+    private JPanel loginField;
+    private JPanel AcabamentosField;
+    private JPanel logField;
 
     public GerenciamentoDeSobras() {
         cadastrarAreaButton.addActionListener(new ActionListener() {
@@ -319,6 +322,12 @@ public class GerenciamentoDeSobras extends JFrame {
                 } catch (Exception a) {
                     a.printStackTrace();
                 }
+
+            }
+        });
+        fazerLoginButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
             }
         });

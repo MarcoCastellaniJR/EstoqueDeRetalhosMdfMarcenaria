@@ -17,12 +17,14 @@
           </grid>
         </constraints>
         <properties>
+          <enabled value="true"/>
           <name value="Cadastros"/>
           <toolTipText value="Cadastros"/>
+          <visible value="true"/>
         </properties>
         <border type="none"/>
         <children>
-          <grid id="2c88b" layout-manager="GridLayoutManager" row-count="7" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="2c88b" binding="loginField" layout-manager="GridLayoutManager" row-count="7" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="Login"/>
@@ -96,12 +98,14 @@
               </component>
             </children>
           </grid>
-          <grid id="ed798" binding="CadastroPanel" layout-manager="GridLayoutManager" row-count="12" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="ed798" binding="cadastroField" layout-manager="GridLayoutManager" row-count="12" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="2" left="5" bottom="2" right="10"/>
             <constraints>
               <tabbedpane title="Cadastros"/>
             </constraints>
-            <properties/>
+            <properties>
+              <enabled value="true"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="643c5" class="javax.swing.JButton" binding="CadastrarRetalhosButton">
@@ -215,12 +219,14 @@
               </component>
             </children>
           </grid>
-          <grid id="e36f3" binding="ListagemPanel" layout-manager="GridLayoutManager" row-count="3" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="e36f3" binding="listagemField" layout-manager="GridLayoutManager" row-count="3" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="2" left="5" bottom="2" right="10"/>
             <constraints>
               <tabbedpane title="ListagemDosRetalhos"/>
             </constraints>
-            <properties/>
+            <properties>
+              <enabled value="true"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="1a741" class="javax.swing.JButton" binding="PorAcabamentoButton">
@@ -305,12 +311,14 @@
               </component>
             </children>
           </grid>
-          <grid id="65c58" binding="AreasPanel" layout-manager="GridLayoutManager" row-count="3" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="65c58" binding="AreasField" layout-manager="GridLayoutManager" row-count="3" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="2" left="5" bottom="2" right="10"/>
             <constraints>
               <tabbedpane title="Áreas"/>
             </constraints>
-            <properties/>
+            <properties>
+              <enabled value="true"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="5d92f" class="javax.swing.JLabel">
@@ -376,12 +384,13 @@
               </component>
             </children>
           </grid>
-          <grid id="30192" layout-manager="GridLayoutManager" row-count="4" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="30192" binding="AcabamentosField" layout-manager="GridLayoutManager" row-count="4" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="Acabamentos"/>
             </constraints>
             <properties>
+              <enabled value="true"/>
               <font style="1"/>
             </properties>
             <border type="none"/>
@@ -474,12 +483,14 @@
               </component>
             </children>
           </grid>
-          <grid id="3ab94" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="3ab94" binding="logField" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="LOG"/>
             </constraints>
-            <properties/>
+            <properties>
+              <enabled value="true"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="8db39" class="javax.swing.JButton" binding="CONSULTARLOGButton" default-binding="true">
