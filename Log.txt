@@ -2,3 +2,26 @@ Chapa Cadastrada: Mdf@15fadcd6
 Cadastro de Área: A4
 Chapa Cadastrada: 100-18-123-321
 Excluiu retalho: 100-18-123-321
+Excluir acabamento:901
+Chapa Cadastrada: 100-18-455-654
+Excluiu retalho: 100-18-455-654
+Cadastro de Área: A5
+Excluiu Área: A5
+Excluiu Área: A5
+Excluiu Área: A5
+Excluiu Área: A5
+Excluiu Área: A5
+Excluiu Área: A5
+Excluiu Área: A5
+Excluiu Área: A5
+Excluiu Área: A5
+Cadastro de Área: A6
+Excluir acabamento:902
+Cadastro de Acabamento:Preto Tx-101
+Excluiu Área: a6
+Chapa Cadastrada: 100-18-324-123
+Excluiu retalho: 100-18-324-123
+Cadastro de Área: A6
+Excluiu Área: A6
+Cadastro de Acabamento:Verti-102
+Cadastro de Acabamento:Freijó Puro - Arauco-103

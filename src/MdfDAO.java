@@ -71,7 +71,7 @@ public class MdfDAO {
 
 
     public void excluirAreas(String nomeArea){
-        String sql = "UPDATE areas SET ative = 0 WHERE name=(?)";
+        String sql = "DELETE FROM areas WHERE name=(?)";
         try{
             ps = ConexaoJDBC.getConexao().prepareStatement(sql);
             ps.setString(1,nomeArea);
