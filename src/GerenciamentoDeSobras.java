@@ -8,7 +8,8 @@ import java.io.IOException;
 
 public class GerenciamentoDeSobras extends JFrame {
 
-    public JPanel GER;
+
+    public JTabbedPane TELAGER;
     private JLabel EspessuraLabel;
     private JTextField EspessuraInput;
     private JLabel Largura;
@@ -58,6 +59,27 @@ public class GerenciamentoDeSobras extends JFrame {
     private JPanel loginField;
     private JPanel AcabamentosField;
     private JPanel logField;
+    private JTabbedPane tabbedPane1;
+    private JTabbedPane tabbedPane2;
+    private JTabbedPane tabbedPane3;
+    private JTabbedPane tabbedPane4;
+    private JTabbedPane tabbedPane5;
+    private JTabbedPane tabbedPane6;
+    private JTextField inputClientName;
+    private JTextField inputCPF;
+    private JTextField inputStreet;
+    private JTextField inputBairro;
+    private JTextField inputTelefone;
+    private JTextField inputDateOfBirth;
+    private JButton cadastrarClienteButton;
+    private JTextField inputEmail;
+    private JTextField inputCel;
+    private JTextField inputCity;
+    private JTextField inputCountry;
+    private JTextField inputCNPJ;
+    private JTextField inputNameEmpresa;
+    private JComboBox inputState;
+
 
     public GerenciamentoDeSobras() {
         cadastrarAreaButton.addActionListener(new ActionListener() {
@@ -331,6 +353,38 @@ public class GerenciamentoDeSobras extends JFrame {
 
             }
         });
+        cadastrarClienteButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Cliente novoCliente = new Cliente();
+                novoCliente.setName(inputClientName.getText());
+                novoCliente.setCpf(inputCPF.getText());
+                novoCliente.setBairro(inputBairro.getText());
+                novoCliente.setRua(inputStreet.getText());
+                novoCliente.setCelular(inputCel.getText());
+                novoCliente.setEmail(inputEmail.getText());
+                novoCliente.setCNPJ(inputCNPJ.getText());
+                novoCliente.setEmpresaName(inputNameEmpresa.getText());
+                novoCliente.setTelefone(inputTelefone.getText());
+                novoCliente.setNascimento(inputDateOfBirth.getText());
+                novoCliente.setCidade(inputCity.getText());
+                novoCliente.setEstado(inputState.getToolTipText());
+                novoCliente.setPais(inputCountry.getText());
+
+                MdfDAO cadastro = new MdfDAO();
+                cadastro.cadastrarCliente(novoCliente);
+            }
+        });
+        inputState.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+    }
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
     }
 
 

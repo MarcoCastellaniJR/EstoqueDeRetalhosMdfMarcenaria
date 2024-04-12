@@ -25,3 +25,7 @@ Cadastro de Área: A6
 Excluiu Área: A6
 Cadastro de Acabamento:Verti-102
 Cadastro de Acabamento:Freijó Puro - Arauco-103
+Cliente Cadastrado- Nome: Marco CastellaniCpf: 43931142809
+Cliente Cadastrado - Nome: Marcos Alexandres - Cpf: 1928377401
+Cliente Cadastrado - Nome: Marco Junior - Cpf: 43223443223
+Cliente Cadastrado - Nome: MArco - Cpf: 12312312312

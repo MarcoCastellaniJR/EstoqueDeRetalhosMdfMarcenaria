@@ -1,5 +1,4 @@
 
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.PreparedStatement;
@@ -293,6 +292,40 @@ public class MdfDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void cadastrarCliente(Cliente cliente){
+        String sql = "INSERT INTO clientes (NAME,CPF,RUA," +
+                "BAIRRO,TELEFONE,CELULAR,EMAIL,NASCIMENTO,CNPJ,NOME_EMPRESA," +
+                "CIDADE,ESTADO,PAIS)" +
+                "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        try {
+            ps = ConexaoJDBC.getConexao().prepareStatement(sql);
+            ps.setString(1, cliente.getName() );
+            ps.setString(2, cliente.getCpf());
+            ps.setString(3, cliente.getRua());
+            ps.setString(4, cliente.getBairro());
+            ps.setString(5, cliente.getTelefone());
+            ps.setString(6, cliente.getCelular());
+            ps.setString(7, cliente.getEmail());
+            ps.setString(8, cliente.getNascimento());
+            ps.setString(9, cliente.getCNPJ());
+            ps.setString(10, cliente.getEmpresaName());
+            ps.setString(11, cliente.getCidade());
+            ps.setString(12, cliente.getEstado());
+            ps.setString(13, cliente.getPais());
+            ps.execute();
+            ps.close();
+            try {
+                logDataBase("Cliente Cadastrado - Nome: " + cliente.getName()+
+                        " - Cpf: " +cliente.getCpf());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
 
