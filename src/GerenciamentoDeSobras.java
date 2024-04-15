@@ -79,6 +79,21 @@ public class GerenciamentoDeSobras extends JFrame {
     private JTextField inputCNPJ;
     private JTextField inputNameEmpresa;
     private JComboBox inputState;
+    private JTextField textField1;
+    private JTable table1;
+    private JTextField textField3;
+    private JButton cadastrarAmbienteButton;
+    private JTextField textField4;
+    private JTextField inputLargura;
+    private JTextField inputProfundidade;
+    private JTextField inputAltura;
+    private JButton novoAmbienteButton;
+    private JTextField textField8;
+    private JTextField textField9;
+    private JTextField textField10;
+    private JTextField textField11;
+    private JButton adicionarMóduloButton;
+    private JEditorPane editorPane1;
 
 
     public GerenciamentoDeSobras() {
