@@ -10,4 +10,20 @@ essa solução entrega essa organização para guardar e encontrar depois
 
 - Próximos passos, validação como usuário
 - organização do cógido
-- implementação de Escrita de etiquetas para serem coladas no mdf ( etiqueta impresa em impressoras Zebras ) 
+
+------ 
+Projeto ganhou um novo rumo e está sendo implementado o sistema de geração de desenho de etiquetas onde:
+  - Ele indica qual o tamanho da peça com um desenho
+  - Escreve o nome da peça com as medidas
+  - FAz criculos para durações
+  - Retas para rasgos
+  - Ainda sem saber como implementar desenhos mais livres para usinagem mas é uma ideia
+
+- Posteriormente essa imagem vai ser usada no montador da etiqueta que nele também vai ter
+    - Informações de cliente
+    - nome de peça
+    - nome do módulo
+    - Código de Barras para Usinagem
+    - Código de Barras para ID de ERP
+    - Algum tipo de classificador de roteiro
+   
