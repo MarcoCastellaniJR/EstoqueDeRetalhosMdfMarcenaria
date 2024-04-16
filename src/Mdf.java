@@ -1,11 +1,16 @@
-import java.security.PublicKey;
-import java.util.Arrays;
+import Integrator.client.Builder;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import java.util.ArrayList;
 
 public class Mdf {
+    private String nomeDaPeca;
     public String IdMDF;
     public int larg;
     public int prof;
     public int esp;
+    public static ArrayList<Builder> listaDeFuracao = new ArrayList<>();
 
     public String getAcabamento() {
         return acabamento;
@@ -72,6 +77,15 @@ public class Mdf {
                 ", Acab="+ acabamento;
     }
 
+    public void adicionaFuracao(Builder novaFuracao){
+        listaDeFuracao.add(novaFuracao);
+    }
+    public static String retornaFuracao(){
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String json = gson.toJson(listaDeFuracao);
+        return json;
+    }
+
     public String getIdMDF() {
         return IdMDF;
     }
@@ -115,6 +129,22 @@ public class Mdf {
 
     public void setArea(String area) {
         Area = area;
+    }
+
+    public String getNomeDaPeca() {
+        return nomeDaPeca;
+    }
+
+    public void setNomeDaPeca(String nomeDaPeca) {
+        this.nomeDaPeca = nomeDaPeca;
+    }
+
+    public static ArrayList<Builder> getListaDeFuracao() {
+        return listaDeFuracao;
+    }
+
+    public static void setListaDeFuracao(ArrayList<Builder> listaDeFuracao) {
+        Mdf.listaDeFuracao = listaDeFuracao;
     }
 }
 
