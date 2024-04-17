@@ -23,14 +23,28 @@ public class Main {
 
 
 
+
         Mdf Base = new Mdf();
+        Base.setProf(400);
+        Base.setLarg(1000);
+        Rasgo rasgo = new Rasgo(0,15.5,Base.getLarg(),15.5,6,"-A");
+        Base.adicionarRasgo(rasgo);
         Base.setNomeDaPeca("Base");
         Base.adicionaFuracao(bui);
         Base.adicionaFuracao(buiSerraCopo);
         String a = Base.retornaFuracao();
         System.out.println(a);
+
+
+
+//        Usinagem usi = Usinagem.criaUsinagem("rebaixo");
+//        usi.setPosIniX(20);
+//        usi.setPosFinX(20);
+//        usi.setPosIniY(60);
+//        usi.setPosFinY(60);
+
+
         gerar.gerarEtiqueta(Base);
-        //Base.adicionaFuracao(s);
 
     }
 }

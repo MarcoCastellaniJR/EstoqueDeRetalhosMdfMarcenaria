@@ -9,17 +9,15 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import javax.imageio.ImageIO;
 
 public class GeradorDeImagemPeca {
     int cent = 100; // centralizador
-    int profPeca = 600;
-    int largPeca = 1200;
-    int etiquetaWidth = largPeca + cent*2;
-    int etiquetaHeight = profPeca + cent*2;
-    int posX;
-    int posY;
+    int profPeca;
+    int largPeca;
+    int etiquetaWidth = largPeca + cent * 2;
+    int etiquetaHeight = profPeca + cent * 2;
+
     // Cria uma imagem BufferedImage com o tamanho especificado
 
 
@@ -31,6 +29,11 @@ public class GeradorDeImagemPeca {
 
 
     public String gerarEtiqueta(Mdf peca) {
+        this.profPeca = peca.getProf();
+        this.largPeca = peca.getLarg();
+        this.etiquetaHeight = peca.getProf()+cent*2;
+        this.etiquetaWidth = peca.getLarg()+cent*2;
+
         // Desenha um fundo branco
         g2d.setColor(Color.WHITE);
         g2d.fillRect(0, 0, etiquetaWidth , etiquetaHeight);
@@ -40,23 +43,22 @@ public class GeradorDeImagemPeca {
 
 
 
-        // Desenha um retângulo azul da peça
+        // DESENHA A PEÇA EM SI
         g2d.setColor(Color.BLUE);
-        g2d.drawRect(cent, cent, largPeca+cent, profPeca+cent);
-        g2d.setColor(Color.BLACK);
-        g2d.drawLine(cent,cent+10,largPeca+cent,cent+10);
+        g2d.drawRect(cent, cent, largPeca, profPeca);
+        //g2d.setColor(Color.BLACK);
+        //g2d.drawLine(cent,cent+10,largPeca+cent,cent+10);
 
-        // Adiciona texto à Imagem
-        String txt = peca.getNomeDaPeca() + ": " + etiquetaWidth + "x" + etiquetaHeight;
+        // ADICIONA TEXTO NA ETIQUETA
+        String txt = peca.getNomeDaPeca() + ": " + largPeca + "x" + profPeca;
         g2d.setColor(Color.BLACK);
         g2d.setFont(new Font("Arial", Font.BOLD, 20));
         g2d.drawString(txt, etiquetaWidth / 3, etiquetaHeight - 20);
 
-        //int i=0;i<peca.listaDeFuracao.size();i++
+        // GERAR FURAÇÕES DE BROCAS
         for(Builder builder : peca.getListaDeFuracao()){
             g2d.setColor(Color.RED);
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-//            String json = gson.toJson(peca.getListaDeFuracao());
+//          String json = gson.toJson(peca.getListaDeFuracao());
             String face = builder.getFace();
             if (face == "-A"){
                 double posX = builder.getPosX();
@@ -67,6 +69,42 @@ public class GeradorDeImagemPeca {
                         , (int) diameter);
             }
         }
+
+        // GERAR LINHA DE RASGo
+        for ( Rasgo rasgo : peca.getListaDeRasgo()){
+            if(rasgo.face == "-A"){
+                double posIniX = rasgo.getInicialX();
+                double posIniY = rasgo.getInicialY();
+                double posFinX = rasgo.getFinalX();
+                double posFinY = rasgo.getFinalY();
+                g2d.drawLine((int) (cent+posIniX), (int) (cent+posIniY),
+                        (int) (cent+posFinX),
+                        (int) (cent+posFinY));
+            }
+        }
+
+        // Gerar usinagem Quadrada de Rebaixo
+        for(Usinagem usinagem: peca.getListaDeUsinagem()){
+            double posIniX = usinagem.getPosIniX();
+            double posIniY = usinagem.getPosIniY();
+            double posFinX = usinagem.getPosFinX();
+            double posFinY = usinagem.getPosFinY();
+            if(usinagem.getTipo() == "rebaixo"){
+                g2d.setColor(Color.ORANGE);}
+            else if(usinagem.getTipo() == "recorte"){
+                g2d.setColor(Color.GREEN);
+            }else{ g2d.setColor(Color.BLACK); }
+            g2d.drawRect((int) posIniX+cent, (int) posIniY+cent,
+                    (int) posFinX+cent, (int) posFinY+cent);
+
+        }
+
+        // Gerar usinagem de Recorte quadrado
+
+
+
+
+
 
 //        g2d.setColor(Color.RED);
 //        g2d.drawOval(posX+cent/2,posY+cent/2+25, 10, 10);

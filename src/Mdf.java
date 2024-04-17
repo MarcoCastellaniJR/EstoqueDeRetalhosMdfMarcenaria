@@ -11,6 +11,9 @@ public class Mdf {
     public int prof;
     public int esp;
     public static ArrayList<Builder> listaDeFuracao = new ArrayList<>();
+    public static ArrayList<Rasgo> listaDeRasgo = new ArrayList<Rasgo>();
+    public static ArrayList<Usinagem> listaDeUsinagem =
+            new ArrayList<Usinagem>();
 
     public String getAcabamento() {
         return acabamento;
@@ -80,9 +83,25 @@ public class Mdf {
     public void adicionaFuracao(Builder novaFuracao){
         listaDeFuracao.add(novaFuracao);
     }
+    public void adicionaUSinagem(Usinagem novaUsinagem){
+        listaDeUsinagem.add(novaUsinagem);
+    }
+
+    public static ArrayList<Usinagem> getListaDeUsinagem() {
+        return listaDeUsinagem;
+    }
+
+    public void adicionarRasgo(Rasgo novoRasgo){
+        listaDeRasgo.add(novoRasgo);
+    }
     public static String retornaFuracao(){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String json = gson.toJson(listaDeFuracao);
+        return json;
+    }
+    public static String retornaRasgo(){
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String json = gson.toJson(listaDeRasgo);
         return json;
     }
 
@@ -143,8 +162,12 @@ public class Mdf {
         return listaDeFuracao;
     }
 
-    public static void setListaDeFuracao(ArrayList<Builder> listaDeFuracao) {
-        Mdf.listaDeFuracao = listaDeFuracao;
+    public static ArrayList<Rasgo> getListaDeRasgo() {
+        return listaDeRasgo;
+    }
+
+    public static void setListaDeRasgo(ArrayList<Rasgo> listaDeRasgo) {
+        Mdf.listaDeRasgo = listaDeRasgo;
     }
 }
 
