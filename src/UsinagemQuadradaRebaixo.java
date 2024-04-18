@@ -1,10 +1,7 @@
-public class UsinagemQuadradaRebaixo extends Usinagem {
-    private double prof;
-    private double posIniX;
-    private double posFinX;
-    private double posIniY;
-    private double posFinY;
+import java.awt.*;
 
-    public UsinagemQuadradaRebaixo() {
+public class UsinagemQuadradaRebaixo extends Usinagem {
+    public UsinagemQuadradaRebaixo(Color color) {
+        super(color);
     }
 }

@@ -28,7 +28,9 @@ public class Main {
         Base.setProf(400);
         Base.setLarg(1000);
         Rasgo rasgo = new Rasgo(0,15.5,Base.getLarg(),15.5,6,"-A");
+        Rasgo rasgo1 = new Rasgo(0,55.5,Base.getLarg(),55.5,6,"-A");
         Base.adicionarRasgo(rasgo);
+        Base.adicionarRasgo(rasgo1);
         Base.setNomeDaPeca("Base");
         Base.adicionaFuracao(bui);
         Base.adicionaFuracao(buiSerraCopo);
@@ -38,16 +40,22 @@ public class Main {
 
 
         Usinagem usi = Usinagem.criaUsinagem("rebaixo");
-        usi.setPosIniX(30);
-        usi.setPosFinX(30);
-        usi.setPosIniY(60);
-        usi.setPosFinY(60);
+        usi.setPosIniX(110);
+        usi.setPosIniY(110);
+        usi.setPosFinX(220);
+        usi.setPosFinY(220);
 
         Usinagem usi2 = Usinagem.criaUsinagem("recorte");
-        usi.setPosIniX(70);
-        usi.setPosFinX(70);
-        usi.setPosIniY(120);
-        usi.setPosFinY(120);
+        usi2.setPosIniX(100);
+        usi2.setPosIniY(100);
+        usi2.setPosFinX(200);
+        usi2.setPosFinY(220);
+
+        System.out.println(usi);
+        System.out.println(usi2);
+        System.out.println(usi.getColor());
+        System.out.println(usi2.getColor());
+
         Base.adicionaUSinagem(usi2);
         Base.adicionaUSinagem(usi);
 

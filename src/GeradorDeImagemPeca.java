@@ -87,16 +87,17 @@ public class GeradorDeImagemPeca {
 
         // Gerar usinagem Quadrada de Rebaixo
         for(Usinagem usinagem: peca.getListaDeUsinagem()){
+//            if(usinagem.getTipo() == "rebaixo"){
+//                g2d.setColor(Color.ORANGE);
+//            }
+//            else if(usinagem.getTipo() == "recorte"){
+//                g2d.setColor(Color.GREEN);
+//            }else{ g2d.setColor(Color.BLACK); }
+            g2d.setColor(usinagem.getColor());
             double posIniX = usinagem.getPosIniX();
             double posIniY = usinagem.getPosIniY();
             double posFinX = usinagem.getPosFinX();
             double posFinY = usinagem.getPosFinY();
-            if(usinagem.getTipo() == "rebaixo"){
-                g2d.setColor(Color.ORANGE);
-            }
-            else if(usinagem.getTipo() == "recorte"){
-                g2d.setColor(Color.GREEN);
-            }else{ g2d.setColor(Color.BLACK); }
             g2d.drawRect((int) posIniX+cent, (int) posIniY+cent,
                     (int) posFinX+cent, (int) posFinY+cent);
 

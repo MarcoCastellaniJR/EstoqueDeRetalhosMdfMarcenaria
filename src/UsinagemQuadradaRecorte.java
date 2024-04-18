@@ -1,4 +1,9 @@
+import java.awt.*;
+
 public class UsinagemQuadradaRecorte extends Usinagem{
-    public UsinagemQuadradaRecorte() {
+
+    public UsinagemQuadradaRecorte(Color color) {
+        super(color);
     }
+
 }

@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public class Usinagem {
     private double prof;
     private double posIniX;
@@ -5,6 +7,15 @@ public class Usinagem {
     private double posIniY;
     private double posFinY;
     static String tipo;
+    public Color color;
+
+    public Usinagem(Color color) {
+        this.color = color;
+    }
+
+    public Color getColor() {
+        return color;
+    }
 
     public static String getTipo() {
         return tipo;
@@ -13,10 +24,10 @@ public class Usinagem {
     public static Usinagem criaUsinagem(String usinagem){
         if(usinagem == "rebaixo"){
             tipo = usinagem;
-            return new UsinagemQuadradaRebaixo();
+            return new UsinagemQuadradaRebaixo(Color.GREEN);
         }else if (usinagem == "recorte"){
             tipo = usinagem;
-            return new UsinagemQuadradaRecorte();
+            return new UsinagemQuadradaRecorte(Color.ORANGE);
         }else{
             throw new IllegalArgumentException("Tipo de usinagem desconhecida");
         }
