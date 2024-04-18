@@ -15,16 +15,13 @@ public class GeradorDeImagemPeca {
     int cent = 100; // centralizador
     int profPeca;
     int largPeca;
-    int etiquetaWidth = largPeca + cent * 2;
-    int etiquetaHeight = profPeca + cent * 2;
+    int etiquetaWidth;
+    int etiquetaHeight;
 
     // Cria uma imagem BufferedImage com o tamanho especificado
 
 
-    BufferedImage image = new BufferedImage(etiquetaWidth, etiquetaHeight,
-            BufferedImage.TYPE_INT_RGB);
-    // Obtém o contexto gráfico para desenhar na imagem
-    Graphics2D g2d = image.createGraphics();
+
 
 
 
@@ -34,9 +31,14 @@ public class GeradorDeImagemPeca {
         this.etiquetaHeight = peca.getProf()+cent*2;
         this.etiquetaWidth = peca.getLarg()+cent*2;
 
+        BufferedImage image = new BufferedImage(etiquetaWidth, etiquetaHeight,
+                BufferedImage.TYPE_INT_RGB);
+        // Obtém o contexto gráfico para desenhar na imagem
+        Graphics2D g2d = image.createGraphics();
+
         // Desenha um fundo branco
         g2d.setColor(Color.WHITE);
-        g2d.fillRect(0, 0, etiquetaWidth , etiquetaHeight);
+        g2d.fillRect(0, 0,etiquetaWidth,etiquetaHeight);
 
         float strokeWidth = 3.0f;
         g2d.setStroke(new BasicStroke(strokeWidth));
@@ -90,7 +92,8 @@ public class GeradorDeImagemPeca {
             double posFinX = usinagem.getPosFinX();
             double posFinY = usinagem.getPosFinY();
             if(usinagem.getTipo() == "rebaixo"){
-                g2d.setColor(Color.ORANGE);}
+                g2d.setColor(Color.ORANGE);
+            }
             else if(usinagem.getTipo() == "recorte"){
                 g2d.setColor(Color.GREEN);
             }else{ g2d.setColor(Color.BLACK); }

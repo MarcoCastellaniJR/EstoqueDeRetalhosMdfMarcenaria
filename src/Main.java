@@ -37,11 +37,19 @@ public class Main {
 
 
 
-//        Usinagem usi = Usinagem.criaUsinagem("rebaixo");
-//        usi.setPosIniX(20);
-//        usi.setPosFinX(20);
-//        usi.setPosIniY(60);
-//        usi.setPosFinY(60);
+        Usinagem usi = Usinagem.criaUsinagem("rebaixo");
+        usi.setPosIniX(30);
+        usi.setPosFinX(30);
+        usi.setPosIniY(60);
+        usi.setPosFinY(60);
+
+        Usinagem usi2 = Usinagem.criaUsinagem("recorte");
+        usi.setPosIniX(70);
+        usi.setPosFinX(70);
+        usi.setPosIniY(120);
+        usi.setPosFinY(120);
+        Base.adicionaUSinagem(usi2);
+        Base.adicionaUSinagem(usi);
 
 
         gerar.gerarEtiqueta(Base);

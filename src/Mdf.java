@@ -11,9 +11,9 @@ public class Mdf {
     public int prof;
     public int esp;
     public static ArrayList<Builder> listaDeFuracao = new ArrayList<>();
-    public static ArrayList<Rasgo> listaDeRasgo = new ArrayList<Rasgo>();
+    public static ArrayList<Rasgo> listaDeRasgo = new ArrayList<>();
     public static ArrayList<Usinagem> listaDeUsinagem =
-            new ArrayList<Usinagem>();
+            new ArrayList<>();
 
     public String getAcabamento() {
         return acabamento;
